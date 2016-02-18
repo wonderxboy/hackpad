@@ -17,9 +17,9 @@
 mkdir -p data/appjet
 
 # JVM heap memory limit (actually reserved during startup)
-MXRAM="4G"
+MXRAM="1G"
 # maximum thread count for etherpad (should be roughly memory in MB / 4)
-MAXTHREADS="2048"
+MAXTHREADS="512"
 
 if [ -x "/usr/bin/perl" ]; then
 	if [ -e "/proc/meminfo" ]; then
