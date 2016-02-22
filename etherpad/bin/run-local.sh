@@ -109,7 +109,7 @@ exec $JAVA -classpath $CP \
     -XX:+PrintGCDetails \
     -XX:+PrintGCTimeStamps \
     -XX:OnOutOfMemoryError="killall -9 java" \
-    -Xloggc:./data/logs/backend/jvm-gc.log \
+    #-Xloggc:./data/logs/backend/jvm-gc.log \
     -Dappjet.jmxremote=true \
     -Djavax.net.ssl.trustStore=./etc/cacerts-rds \
     -Djavax.net.ssl.trustStorePassword=changeit \
