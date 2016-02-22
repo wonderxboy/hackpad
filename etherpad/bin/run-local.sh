@@ -93,10 +93,6 @@ echo "Using config file: ${cfg_file}"
 exec $JAVA -classpath $CP \
     -server \
     -Xmx${MXRAM} \
-    -Xms${MXRAM} \
-    -XX:NewSize=768m \
-    -XX:PermSize=256m \
-    -XX:MaxPermSize=512m \
     -Djava.awt.headless=true \
     -Djava.util.logging.config.file=../infrastructure/lib/logging.properties \
     -XX:MaxGCPauseMillis=500 \
@@ -109,7 +105,6 @@ exec $JAVA -classpath $CP \
     -XX:+PrintGCDetails \
     -XX:+PrintGCTimeStamps \
     -XX:OnOutOfMemoryError="killall -9 java" \
-    #-Xloggc:./data/logs/backend/jvm-gc.log \
     -Dappjet.jmxremote=true \
     -Djavax.net.ssl.trustStore=./etc/cacerts-rds \
     -Djavax.net.ssl.trustStorePassword=changeit \
@@ -119,3 +114,9 @@ exec $JAVA -classpath $CP \
     --maxThreads=${MAXTHREADS}
     "$@"
 
+#removed options from above
+#-Xms${MXRAM} \
+#-XX:NewSize=768m \
+#-XX:PermSize=256m \
+#-XX:MaxPermSize=512m \
+#-Xloggc:./data/logs/backend/jvm-gc.log \
